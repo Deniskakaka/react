@@ -1,0 +1,16 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.greeting{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+
+    &__name{
+        margin-right: 10px;
+    }
+}
