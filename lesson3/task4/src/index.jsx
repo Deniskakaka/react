@@ -8,6 +8,6 @@ const rootElement = document.querySelector('#root');
 
 
 ReactDOM.render(
-    <Greeting />,
+    <Greeting firstName={'John'} lastName={'Doe'} birthDate={17}/>,
     rootElement  
 )
