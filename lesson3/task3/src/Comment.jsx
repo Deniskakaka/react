@@ -1,22 +1,14 @@
 import React from 'react';
 import moment from "moment";
 import './comment.scss';
+import UserInfo from './UserInfo.jsx';
 
 const formatDate = date => moment(date).format("DD MMM YYYY");
 
 function Comment(props) {
   return (
     <div className="comment">
-        <div className="user-info">
-          <img
-              className="avatar"
-              src={props.user.avatarUrl}
-              alt={props.user.name}
-          />
-          <div className="user-info__name">
-            {props.user.name}
-          </div>
-        </div>
+        <UserInfo user={props.user}/>
         <div className="comment__text">
           {props.text}
         </div>
