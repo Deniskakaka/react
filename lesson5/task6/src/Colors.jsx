@@ -1,34 +1,43 @@
 import React, { Component } from 'react';
 
 class Colors extends Component {
+    constructor(props) {
+      super(props);
 
-    setTextColor = (e) => {
-        if (e.target.className === 'picker__button picker__button_coral') {
-            document.querySelector('.picker__title').textContent = 'Coral'
-        }
-        if (e.target.className === 'picker__button picker__button_aqua') {
-            document.querySelector('.picker__title').textContent = 'Aqua'
-        }
-        if (e.target.className === 'picker__button picker__button_bisque') {
-            document.querySelector('.picker__title').textContent = 'Bisque'
-        }
+      this.state = {
+        color: ''
+      }
+    }
+    setTextColor = (colorText) => {
+      this.setState({
+        color: colorText,
+      });
+    }
+
+    clearText = () => {
+      this.setState({
+        color: ''
+      })
     }
 
     render () {
         return (
             <div>
             <div className="picker__title">
-              
+              {this.state.color}
             </div>
             <div>
               <button className="picker__button picker__button_coral"
-               onMouseOver={this.setTextColor.bind(this)}
+               onMouseOver={this.setTextColor.bind(this,'Coral')}
+               onMouseLeave = {this.clearText}
               ></button>
               <button className="picker__button picker__button_aqua"
-                onMouseOver={this.setTextColor.bind(this)}
+                onMouseOver={this.setTextColor.bind(this,'Aqua')}
+                onMouseLeave = {this.clearText}
               ></button>
               <button className="picker__button picker__button_bisque"
-                onMouseOver={this.setTextColor.bind(this)}
+                onMouseOver={this.setTextColor.bind(this,'Bisque')}
+                onMouseLeave = {this.clearText}
               ></button>
             </div>
           </div>

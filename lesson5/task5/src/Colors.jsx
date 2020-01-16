@@ -22,7 +22,7 @@ class Colors extends Component {
 
    changeText = () => {
         this.setState({
-            text: this.state.text === 'Off' ? this.state.text = 'On': this.state.text = 'Off'
+            text: this.state.text === 'Off' ? 'On':'Off'
         })
     }
 
