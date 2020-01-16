@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import Greeting from './Greeting.jsx';
-import Logout from './Loguot.jsx';
+import Logout from './Logout.jsx';
 import Login from './Login.jsx';
 
 class Auth extends Component {
@@ -18,7 +18,7 @@ class Auth extends Component {
         })
     }
 
-    handleLoginOut= () => {
+    handleLoginOut = () => {
         this.setState({
             isLoggenIn: false
         })
@@ -29,10 +29,10 @@ class Auth extends Component {
         return (
             <div className="panel">
                 <Greeting isLoggenIn = {this.state.isLoggenIn}/>
-                <div>{this.state.isLoggenIn ? <Logout /> : <Login />}</div>
+                <div>{this.state.isLoggenIn ? <Logout click = {this.handleLoginOut}/> : <Login click = {this.handleLogin}/>}</div>
             </div>
         )
     }
-}
+};
 
 export default Auth;
