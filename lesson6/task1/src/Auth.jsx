@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
 import Greeting from './Greeting.jsx';
+import Logout from './Loguot.jsx';
+import Login from './Login.jsx';
 
 class Auth extends Component {
     constructor(props) {
@@ -24,18 +26,10 @@ class Auth extends Component {
 
 
     render() {
-        let button = this.state.isLoggenIn
-            ?  button = <button className="login btn" onClick={this.handleLoginOut}>
-                            Logout
-                        </button>
-            :  button = <button className="logout btn" onClick={this.handleLogin}>
-                            Login
-                        </button>
-
         return (
             <div className="panel">
                 <Greeting isLoggenIn = {this.state.isLoggenIn}/>
-                <div>{button}</div>
+                <div>{this.state.isLoggenIn ? <Logout /> : <Login />}</div>
             </div>
         )
     }
