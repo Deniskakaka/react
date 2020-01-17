@@ -20,8 +20,8 @@ class Page extends Component {
             <div className="page">
                 <Message text={this.state.text}/>
                 <div className="actions">
-                    <button className="btn" onClick={() => this.setText(text1)}>{text1}</button>
-                    <button className="btn" onClick={() => this.setText(text2)}>{text2}</button>
+                    <button className="btn" onClick={() => this.setText(text1)}>Text 1</button>
+                    <button className="btn" onClick={() => this.setText(text2)}>Text 2</button>
                     <button className="btn" onClick={() => this.setText('')}>Clear</button>
                 </div>
             </div>
