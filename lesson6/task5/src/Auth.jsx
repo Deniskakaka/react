@@ -14,7 +14,7 @@ class Auth extends Component{
         }
     }
     
-    handleLogin = () => {
+    onLogin = () => {
         this.showSpiner()
         setTimeout(() => {
             this.setState({
@@ -24,7 +24,7 @@ class Auth extends Component{
         },2000)
     }
 
-    handleLoginOut = () => {
+    onLoginOut = () => {
         this.setState({
             isLoggenIn: false,
         })
@@ -38,7 +38,7 @@ class Auth extends Component{
 
     render(){
         return  <div className="main">
-                    {!this.state.isLoggenIn ? <Login click = {this.handleLogin} show={this.state.spiner}/> : <Logout click = {this.handleLoginOut}/>}
+                    {!this.state.isLoggenIn ? <Login click = {this.onLogin} show={this.state.spiner}/> : <Logout click = {this.onLoginOut}/>}
                     {!this.state.spiner ? '': <Spiner size ={20}/>}
                 </div>
     }
