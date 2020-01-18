@@ -3,41 +3,29 @@ import React, { Component } from 'react';
 class Pagination extends Component {
 
     state = {
-            currentPage:0,
-            rigth: false,
-            left: true
+            currentPage:1,
+            rigth: true,
+            left: false
     }
 
     goNext = () => {
-        this.setState({
-             currentPage: ++this.state.currentPage
-        });
-        this.On()
+        if (this.state.currentPage === 0) {
+            this.setState({
+                rigth: true,
+                left: false,
+                currentPage: ++this.state.currentPage
+            });
+        }
     }
 
     goPrev = () => {
-        this.setState({
-            currentPage: --this.state.currentPage
-        });
-       this.Off()
-    }
-
-    On = () => {
-        if (this.state.currentPage === 1) {
+         if (this.state.currentPage === 1) {
             this.setState({
-                rigth:true,
-                left: false
+                rigth: false,
+                left: true,
+                currentPage: --this.state.currentPage
             });
-        }
-    }
-
-    Off = () => {
-        if (this.state.currentPage === 0) {
-            this.setState({
-                rigth:false,
-                left: true
-            });
-        }
+        }  
     }
 
     render() {
