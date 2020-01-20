@@ -20,6 +20,41 @@ const users = [
         age:18,
         name:'Tad',
         id: '3'
+    },
+    {
+        age:23,
+        name:'Ann',
+        id: '4'
+    },
+    {
+        age:47,
+        name:'Vova',
+        id: '5'
+    },
+    {
+        age:81,
+        name:'John',
+        id: '6'
+    },
+    {
+        age:17,
+        name:'Marty',
+        id: '7'
+    },
+    {
+        age:19,
+        name:'Oleg',
+        id: '8'
+    },
+    {
+        age:18,
+        name:'Pape',
+        id: '9'
+    },
+    {
+        age:45,
+        name:'Tad',
+        id: '10'
     }
 ];
 

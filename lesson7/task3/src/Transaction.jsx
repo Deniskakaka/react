@@ -12,8 +12,8 @@ const Transaction = (props) => {
                     key={i.id} dateDay={formatDate(i.time)}
                     dateTime={formatTime(i.time)} 
                     from={i.from} to={i.to} 
-                    rate={i.rate} 
-                    amount={i.amount}   
+                    rate={new Intl.NumberFormat('en-GB').format(i.rate)} 
+                    amount={new Intl.NumberFormat('en-GB').format(i.amount)}   
                  />
             ))}
            </ul>
