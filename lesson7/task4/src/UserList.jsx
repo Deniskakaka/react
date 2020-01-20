@@ -6,8 +6,6 @@ class UserList extends Component {
 
     state = {
         currentPage:0,
-        rigth: true,
-        left: false,
         itemsPerPage:3
     }
 
@@ -16,28 +14,18 @@ class UserList extends Component {
             this.setState({
                 currentPage: ++this.state.currentPage
             });
-       } else {
-            this.setState({
-                rigth: true,
-                left: false,
-            });
-       }
-           
+       } 
     }
-
+   
     goPrev = () => {
         if (this.state.currentPage > 0) {
             this.setState({
                 currentPage: --this.state.currentPage
             })
-        } else {
-            this.setState({
-                rigth: false,
-                left: true,
-            })
         }
-           
     }
+    
+   
 
     render() {
         let startIndex = this.state.currentPage * this.state.itemsPerPage;
@@ -46,8 +34,6 @@ class UserList extends Component {
                     totalItems={this.length}
                     goPrev={this.goPrev}
                     goNext={this.goNext}
-                    left={this.state.left}
-                    right={this.state.right}
                     currentPage={this.state.currentPage}
                     itemsPerPage={this.state.itemsPerPage}
                 />
