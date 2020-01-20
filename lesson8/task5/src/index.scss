@@ -1,0 +1,18 @@
+body{
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.block{
+    padding: 20px;
+    border: green solid 5px;
+    border-radius: 5px;
+}
+
+.status_offline{
+    padding: 20px;
+    border: red solid 5px;
+    border-radius: 5px;
+}
