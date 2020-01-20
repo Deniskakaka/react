@@ -6,13 +6,13 @@ class UserList extends Component {
 
     state = {
         currentPage:0,
-        itemsPerPage:3
+        itemsPerPage:2
     }
 
     goNext = () => {
        if (this.state.currentPage < this.state.itemsPerPage) {
             this.setState({
-                currentPage: ++this.state.currentPage
+                currentPage: ++this.state.currentPage,
             });
        } 
     }
@@ -25,7 +25,6 @@ class UserList extends Component {
         }
     }
     
-   
 
     render() {
         let startIndex = this.state.currentPage * this.state.itemsPerPage;

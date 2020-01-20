@@ -1,0 +1,22 @@
+body{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.btn{
+    padding: 5px 15px;
+    font-size: 20px;
+    color: white;
+    background-color: green;
+    margin: 10px;
+    border: none;
+    border-radius: 10px;
+}
+
+.number{
+    font-size: 50px;
+    margin-left: 120px;
+}
