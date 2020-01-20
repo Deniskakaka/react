@@ -33,7 +33,7 @@ class Pagination extends Component {
                 <div className="pagination">
                     <button className="btn" onClick={this.goPrev} disabled={this.state.left}>{this.state.currentPage === 0 ? "": '←'}</button>
                     <span className="pagination__page">{this.state.currentPage}</span>
-                    <button className="btn" onClick={this.goNext} disabled={this.state.rigth}>{this.state.currentPage === 1? "": '→'}</button>
+                    <button className="btn" onClick={this.goNext} disabled={this.state.rigth}>{this.state.currentPage === 1 ? "": '→'}</button>
                 </div>
         );
     }
