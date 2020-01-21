@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ConnectionStatus extends Component {
     state = {
         text: 'online',
-        class: 'block'
+        class: 'status'
     }
 
 
@@ -20,14 +20,14 @@ class ConnectionStatus extends Component {
     offline = () => {
         this.setState({
             text: 'offline',
-            class: 'status_offline'
+            class: 'status status_offline'
         })
     }
 
     online = () => {
         this.setState({
             text: 'online',
-            class: 'block'
+            class: 'status'
         })
     }
 
