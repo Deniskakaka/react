@@ -6,7 +6,8 @@ class UserList extends Component {
 
     state = {
         currentPage:0,
-        itemsPerPage:3
+        itemsPerPage:9,
+        isLastPage: this.props.users.length - 1
     }
 
     goNext = () => {
@@ -32,8 +33,9 @@ class UserList extends Component {
                     totalItems={this.length}
                     goPrev={this.goPrev}
                     goNext={this.goNext}
-                    currentPage={this.state.currentPage}
                     itemsPerPage={this.state.itemsPerPage}
+                    currentPage={this.state.currentPage}
+                    isLastPage={this.state.isLastPage}
                 />
                 <ul className="users">
                     {showUser}

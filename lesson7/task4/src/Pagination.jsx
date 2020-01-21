@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 const Pagination = (props) => {
-        const {currentPage, itemsPerPage,goPrev,goNext} = props
+        const {currentPage, isLastPage,goPrev,goNext,itemsPerPage} = props
         return(
                 <div className="pagination">
                     <button 
@@ -12,8 +12,8 @@ const Pagination = (props) => {
                     <span className="pagination__page">{currentPage}</span>
                     <button 
                         className="btn" onClick={goNext} 
-                        disabled={currentPage === itemsPerPage ? true: false}>
-                        {currentPage === itemsPerPage? "": '→'}
+                        disabled={currentPage === Math.floor(isLastPage / itemsPerPage) ? true: false}>
+                        {currentPage === Math.floor(isLastPage / itemsPerPage)? "": '→'}
                     </button>
                 </div>
         );
