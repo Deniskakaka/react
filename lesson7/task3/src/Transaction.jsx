@@ -1,5 +1,4 @@
 import React from 'react';
-import moment from "moment";
 import TransactionList from './TransactionList.jsx';
 
 const formatDate = date => moment(date).format('D MMM');
@@ -9,8 +8,9 @@ const Transaction = (props) => {
     return <ul className="transactions">
             {props.transactions.map( i => (
                 <TransactionList  
-                    key={i.id} dateDay={formatDate(i.time)}
-                    dateTime={formatTime(i.time)} 
+                    key={i.id} 
+                    dateDay={i.time}
+                    dateTime={i.time} 
                     from={i.from} to={i.to} 
                     rate={new Intl.NumberFormat('en-GB').format(i.rate)} 
                     amount={new Intl.NumberFormat('en-GB').format(i.amount)}   
