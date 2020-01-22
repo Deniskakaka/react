@@ -15,7 +15,7 @@ class Clock extends Component {
     componentDidMount() {
         this.interval = setInterval(() => {
             this.setState({
-                date: formatTime(this.props.offset)
+                date: this.props.offset
             })
         }, 1000)
     }
@@ -27,7 +27,7 @@ class Clock extends Component {
     render() {
         return <div className="clock">
                     <span className="clock__location">{this.props.location}</span>
-                    <span className="clock__time">{this.state.date}</span>
+                    <span className="clock__time">{formatTime(this.state.date)}</span>
                 </div>
     }
 };
