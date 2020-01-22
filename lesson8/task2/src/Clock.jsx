@@ -6,7 +6,6 @@ class Clock extends Component {
         super(props);
 
         this.state = {
-            city: props.location,
             date: 0,
         };
     }
@@ -14,7 +13,7 @@ class Clock extends Component {
     componentDidMount() {
         this.interval = setInterval(() => {
             this.setState({
-                date: moment().utcOffset(this.props.offset).format('h:mm:ss A')
+                date: this.props.offset
             })
         }, 1000)
     }
@@ -25,8 +24,8 @@ class Clock extends Component {
     
     render() {
         return <div className="clock">
-                    <span className="clock__location">{this.state.city}</span>
-                    <span className="clock__time">{this.state.date}</span>
+                    <span className="clock__location">{this.props.location}</span>
+                    <span className="clock__time">{moment().utcOffset(this.state.date).format('h:mm:ss A')}</span>
                 </div>
     }
 };

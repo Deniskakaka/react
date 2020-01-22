@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class ConnectionStatus extends Component {
     state = {
         text: 'online',
-        class: 'status'
+        online: true
     }
 
 
@@ -12,7 +12,7 @@ class ConnectionStatus extends Component {
         window.addEventListener('online', this.online);
     }
 
-    componentWillMount() {
+    componentWillUnMount() {
         window.removeEventListener('offline', this.offline)
         window.removeEventListener('online', this.online)
     }
@@ -20,19 +20,19 @@ class ConnectionStatus extends Component {
     offline = () => {
         this.setState({
             text: 'offline',
-            class: 'status status_offline'
+            online: false
         })
     }
 
     online = () => {
         this.setState({
             text: 'online',
-            class: 'status'
+            online: true
         })
     }
 
     render() {
-        return <div className={`${this.state.class}`}>{this.state.text}</div>
+        return <div className={ this.state.online ? 'status' : 'status status_offline'}>{this.state.text}</div>
     }
 };
 

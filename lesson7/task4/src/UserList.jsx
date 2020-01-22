@@ -6,7 +6,7 @@ class UserList extends Component {
 
     state = {
         currentPage:0,
-        itemsPerPage:9,
+        itemsPerPage:4,
         isLastPage: this.props.users.length - 1
     }
 
