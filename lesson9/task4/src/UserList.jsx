@@ -15,9 +15,9 @@ class UserList extends Component {
     }
 
     render() {
-        const filterList = this.props.users.filter(user => user.name === this.state.value);
-        const userList = filterList.map(user => <User key={user.id} name={user.name} age={user.age}/>)
-        console.log(this.props.users)
+        const filterList = this.props.users
+                            .filter(user => user.name === this.state.value)
+                            .map(user => <User key={user.id} name={user.name} age={user.age}/>)
         return (
             <div>
                 <div className="filter">
@@ -30,7 +30,7 @@ class UserList extends Component {
                     />
                 </div>
                 <ul className="users">
-                    {userList}
+                    {filterList}
                 </ul>
             </div>
         )
