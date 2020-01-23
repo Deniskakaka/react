@@ -20,15 +20,11 @@ class UserList extends Component {
                             .map(user => <User key={user.id} name={user.name} age={user.age}/>)
         return (
             <div>
-                <div className="filter">
-                  <Filter count={filterList.length}/>
-                    <input 
-                        type="text" 
-                        className="filter__input"
-                        onChange={this.handleChange}
-                        value={this.state.value} 
-                    />
-                </div>
+                <Filter 
+                    count={filterList.length}
+                    onChange={this.handleChange}
+                    filterText={this.state.value} 
+                />
                 <ul className="users">
                     {filterList}
                 </ul>

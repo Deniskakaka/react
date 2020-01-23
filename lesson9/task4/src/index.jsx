@@ -55,7 +55,7 @@ const users = [
         age:45,
         name:'Tad',
         id: '10'
-    }
+    },
 ];
 
 
