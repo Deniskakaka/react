@@ -17,13 +17,8 @@ class UserList extends Component {
     
     render() {
         const filterList = this.props.users
-                            .filter(user => {
-                                if (this.state.value === '') {
-                                    return ''
-                                } else {
-                                    return user.name.toLowerCase().includes(this.state.value)
-                                }
-                            })
+                            .filter(user => 
+                                this.state.value === '' ? '' : user.name.toLowerCase().includes(this.state.value))
                             .map(user => <User key={user.id} name={user.name} age={user.age}/>)
               console.log(filterList)              
         return (
