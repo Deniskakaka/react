@@ -15,8 +15,10 @@ class UserList extends Component {
     }
 
     render() {
+        const firstLetter = this.state.value.slice(0,1).toUpperCase();
+        const otherText = this.state.value.slice(1).toLowerCase();
         const filterList = this.props.users
-                            .filter(user => user.name === this.state.value)
+                            .filter(user => user.name === (firstLetter + otherText) )
                             .map(user => <User key={user.id} name={user.name} age={user.age}/>)
         return (
             <div>
