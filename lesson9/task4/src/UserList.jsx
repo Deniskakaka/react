@@ -1,3 +1,4 @@
+'user strict'
 import React, { Component } from 'react';
 import Filter from './Filter.jsx';
 import User from './User.jsx';
@@ -13,13 +14,18 @@ class UserList extends Component {
             value: event.target.value
         })
     }
-
+    
     render() {
-        const firstLetter = this.state.value.slice(0,1).toUpperCase();
-        const otherLetters = this.state.value.slice(1).toLowerCase();
         const filterList = this.props.users
-                            .filter(user => user.name === (firstLetter + otherLetters) )
+                            .filter(user => {
+                                if (this.state.value === '') {
+                                    return ''
+                                } else {
+                                    return user.name.toLowerCase().includes(this.state.value)
+                                }
+                            })
                             .map(user => <User key={user.id} name={user.name} age={user.age}/>)
+              console.log(filterList)              
         return (
             <div>
                 <Filter 
