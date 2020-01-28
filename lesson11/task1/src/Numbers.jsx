@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class Numbers extends React.Component {
     shouldComponentUpdate(nextProps) {
@@ -14,6 +15,15 @@ class Numbers extends React.Component {
             </div>
         )
     }
+};
+
+Numbers.propTypes = {
+    title: PropTypes.string,
+    number: PropTypes.number.isRequired
+};
+
+Numbers.defaultProps = {
+    title:'Some Number'
 };
 
 export default Numbers;
