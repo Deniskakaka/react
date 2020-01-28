@@ -1,4 +1,5 @@
 import React from 'React';
+import PropTypes from 'prop-types';
 
 const Expand = ({title, children,isOpen,show, hide}) => {
     return (
@@ -13,5 +14,17 @@ const Expand = ({title, children,isOpen,show, hide}) => {
         </div>
     )
 };
+
+Expand.propTypes = {
+    isOpen: PropTypes.bool,
+    title: PropTypes.string,
+    show: PropTypes.func.isRequired,
+    hide: PropTypes.func.isRequired
+};
+
+Expand.defaultProps = {
+    title: '',
+    isOpen: false
+}
 
 export default Expand;
