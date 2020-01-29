@@ -1,30 +1,44 @@
 import React from 'React';
 import PropTypes from 'prop-types';
 
-const Expand = ({title, children,isOpen,show, hide}) => {
-    return (
-        <div className="expand border">
-            <div className="expand__header">
-                <span className="expand__title">{title}</span>
-                <button className="expand__toggle-btn" onClick={!isOpen ? show : hide}>
-                <i className={isOpen ? 'fas fa-long-arrow-alt-up down' : 'fas fa-long-arrow-alt-up'}></i>
-                </button>
+class Expand extends React.Component {
+    state = {
+        isOpen: false,
+    }
+
+    showText = () => {
+        this.setState({
+            isOpen: true
+        })
+    }
+
+    hideText = () => {
+        this.setState({
+            isOpen: false
+        })
+    }
+    render() {
+        return (
+            <div className="expand border">
+                <div className="expand__header">
+                    <span className="expand__title">{this.props.title}</span>
+                    <button className="expand__toggle-btn" onClick={!this.state.isOpen ? this.showText : this.hideText}>
+                    <i className={this.state.isOpen ? 'fas fa-long-arrow-alt-up down' : 'fas fa-long-arrow-alt-up'}></i>
+                    </button>
+                </div>
+                {!this.state.isOpen ? null : this.props.children}
             </div>
-            {children}
-        </div>
-    )
+        )
+    }
+    
 };
 
 Expand.propTypes = {
-    isOpen: PropTypes.bool,
     title: PropTypes.string,
-    show: PropTypes.func.isRequired,
-    hide: PropTypes.func.isRequired
 };
 
 Expand.defaultProps = {
     title: '',
-    isOpen: false
 }
 
 export default Expand;
