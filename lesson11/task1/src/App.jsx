@@ -8,10 +8,19 @@ class App extends React.Component {
         number: 0
     };
 
+    componentDidMount() {
+        this.intervalId = setInterval(() => {
+          this.setState((state) => ({ number: state.number + 1 }));
+        }, 1000);
+    }
+
     render() {
         return(
             <div className="app">
-                <Numbers  number={17}/>
+                <OddNumbers number={this.state.number} />
+                <EvenNumbers number={this.state.number} />
+                <Numbers title={'All numbers'} number={this.state.number} />
+                <Numbers title={'Just 17'} number={17} />
             </div>
         )
     }

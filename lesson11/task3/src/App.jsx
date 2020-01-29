@@ -6,13 +6,13 @@ class App extends React.Component {
         isOpen: false,
     }
 
-    ShowText= () => {
+    showText= () => {
         this.setState({
             isOpen: true
         })
     }
 
-    HideText = () => {
+    hideText = () => {
         this.setState({
             isOpen: false
         })
@@ -25,7 +25,7 @@ class App extends React.Component {
             </div>
         )
         return (
-            <Expand title="Some title" isOpen={this.state.isOpen} show={this.ShowText} hide={this.HideText}>
+            <Expand title="Some title" isOpen={this.state.isOpen} show={this.showText} hide={this.hideText}>
                 {!this.state.isOpen ? null : elements}
             </Expand>
         )
