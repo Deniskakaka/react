@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dialog should isOpen equal false dialog is none 1`] = `
+<div
+  className="dialog"
+>
+  <div
+    className="dialog__heading"
+  >
+    <h4
+      className="dialog__title"
+    />
+    <button
+      className="dialog__close-btn"
+    >
+      +
+    </button>
+  </div>
+  <div
+    className="dialog__content"
+  />
+</div>
+`;
+
+exports[`Dialog should show display element 1`] = `
+<div
+  className="dialog__heading"
+>
+  <h4
+    className="dialog__title"
+  />
+  <button
+    className="dialog__close-btn"
+  >
+    +
+  </button>
+</div>
+`;
+
+exports[`Dialog should show display elements 1`] = `
+<div
+  className="dialog"
+>
+  <div
+    className="dialog__heading"
+  >
+    <h4
+      className="dialog__title"
+    />
+    <button
+      className="dialog__close-btn"
+    >
+      +
+    </button>
+  </div>
+  <div
+    className="dialog__content"
+  />
+</div>
+`;
+
+exports[`Dialog should show display elements 2`] = `
+<div
+  className="dialog__heading"
+>
+  <h4
+    className="dialog__title"
+  />
+  <button
+    className="dialog__close-btn"
+  >
+    +
+  </button>
+</div>
+`;
