@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<TaskList/> should display sorted by "done" status 1`] = `
+<div
+  className="todo-list"
+>
+  <CreateTaskInput
+    onCreate={[Function]}
+  />
+  <ul
+    className="list"
+  />
+</div>
+`;
