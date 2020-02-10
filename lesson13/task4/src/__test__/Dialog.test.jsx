@@ -26,7 +26,7 @@ describe('Dialog', () => {
     });
 
     it('should isOpen equal false dialog is none', () => {
-        const wrappedComponent = shallow(<Dialog isOpen children={0}/>)
+        const wrappedComponent = shallow(<Dialog isOpen><span>0</span></Dialog>)
         expect(wrappedComponent.find('.dialog').find('.dialog__content').text()).toEqual('0');
     });
 })
