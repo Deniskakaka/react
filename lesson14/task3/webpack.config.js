@@ -8,7 +8,8 @@ module.exports = (env, argv) => {
     const config = {
         entry: "./src/index.jsx",
         output: {
-            filename: "review_build/bundle.js"
+            filename: "review_build/bundle.js",
+            publicPath:'/'
         },
         module: {
             rules: [
@@ -36,7 +37,8 @@ module.exports = (env, argv) => {
             }),
         ],
         devServer: {
-            hot: true
+            hot: true,
+            historyApiFallback:true
         }
     };
 
