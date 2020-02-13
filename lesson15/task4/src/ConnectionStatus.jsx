@@ -16,7 +16,7 @@ const ConnectionStatus = () => {
     })
 
     return (
-        <div className="status">
+        <div className={Conect ? 'status' : 'red'}>
             {Conect ? <Online/>: <Offline/>}
         </div>
     );
