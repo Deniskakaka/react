@@ -1,6 +1,6 @@
 import React, { Component, useEffect, useState } from 'react';
 
-const Dimensions = () => {
+const Dimension = () => {
     const [demensions, setDimensions] = useState({
         widht: 0,
         height: 0
@@ -28,4 +28,4 @@ const Dimensions = () => {
     );
 }
 
-export default Dimensions;
+export default Dimension;
