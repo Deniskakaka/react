@@ -20,7 +20,7 @@ const Dimensions = () => {
         }
     }, [])
     const  { width, height } = demensions;
-
+    document.title = `${width}px - ${height}px`
     return (
         <div className="dimensions">
             {`${width}px - ${height}px`}
