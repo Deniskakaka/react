@@ -13,7 +13,7 @@ const ConnectionStatus = () => {
             window.removeEventListener('online', () => setConect(true));
             window.removeEventListener('offline', () => setConect(false));
         }
-    })
+    },[])
 
     return (
         <div className={Conect ? 'status' : 'red'}>
