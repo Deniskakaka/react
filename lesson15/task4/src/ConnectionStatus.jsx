@@ -7,12 +7,20 @@ const ConnectionStatus = () => {
     });
 
     useEffect(() => {
-        window.addEventListener('offline', () => setConect({status: false, text: 'offline'}));
-        window.addEventListener('online', () => setConect({status: true, text: 'online'}));
+        const statusConectOffline = () => {
+            setConect({status: false, text: 'offline'})
+        };
+
+        const statusConectOnline = () => {
+            setConect({status: true, text: 'online'})
+        }
+
+        window.addEventListener('offline', statusConectOffline);
+        window.addEventListener('online', statusConectOnline );
 
         return () => {
-            window.removeEventListener('offline', () => setConect({status: false, text: 'offline'}));
-            window.removeEventListener('online', () => setConect({status: true, text: 'online'}));
+            window.removeEventListener('offline', statusConectOffline);
+            window.removeEventListener('online', statusConectOnline);
         }
     },[])
 
